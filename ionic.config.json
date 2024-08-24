@@ -1,0 +1,7 @@
+{
+  "name": "store_ionic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
