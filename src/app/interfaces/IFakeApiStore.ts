@@ -1,4 +1,8 @@
 export interface IFakeStoreAPIResponse {
+  results: Result[];
+}
+
+export interface Result {
   id: number;
   title: string;
   price: number;

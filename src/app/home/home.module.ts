@@ -8,7 +8,7 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from '../services/http.service';
 import { CardComponent } from '../components/card/card.component';
-
+import { ToolbarComponent } from '../components/toolbar/toolbar.component';
 
 @NgModule({
   imports: [
@@ -18,7 +18,7 @@ import { CardComponent } from '../components/card/card.component';
     HomePageRoutingModule,
     HttpClientModule
   ],
-  declarations: [HomePage, CardComponent],
+  declarations: [HomePage, CardComponent, ToolbarComponent],
   providers: [HttpService]
 })
 export class HomePageModule {}

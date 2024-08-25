@@ -1,6 +1,17 @@
-<ion-header [translucent]="true">
-
+<ion-header>
+  <app-toolbar></app-toolbar>
+</ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-card></app-card>
+  <ion-grid [fixed]="true">
+    <ion-row>
+      @if (products) {
+        @for (product of products.results; track $index) {
+          <ion-col>
+            <app-card [images]="product.images" [title]="product.title" [category]="product.category.name" [price]="product.price"></app-card>
+          </ion-col>
+        }
+      }
+    </ion-row>
+  </ion-grid>
 </ion-content>

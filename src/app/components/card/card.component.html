@@ -1,10 +1,14 @@
-<ion-card>
+<ion-card mode="ios">
+  <img [src]="images" alt="product">
   <ion-card-header>
-    Rick Sanchez
+    {{ title | slice:0:25 }}...
   </ion-card-header>
-  <ion-card-content>
+  <ion-card-content mode="ios">
     <p>
-      Status: Alive
+      {{ category }}
+    </p>
+    <p>
+      {{ price | currency:'$ ' }}
     </p>
   </ion-card-content>
 </ion-card>

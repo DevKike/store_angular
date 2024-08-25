@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { environment } from 'src/environments/environment';
-import { IFakeStoreAPIResponse } from '../interfaces/IFakeApiStore';
+import { IFakeStoreAPIResponse, Result } from '../interfaces/IFakeApiStore';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +15,8 @@ export class HomePage implements OnInit {
 
   async ngOnInit() {
     const url = environment.URL_BASE + 'products';
-    this.products = await this.httpService.get<IFakeStoreAPIResponse>(url);
+    const results: Result[] = await this.httpService.get<Result[]>(url);
+    this.products = { results }
     console.log('🚀 ~ HomePage ~ ngOnInit ~ this.products:', this.products);
   }
 }
