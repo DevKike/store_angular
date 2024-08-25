@@ -6,10 +6,10 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./card.component.scss'],
 })
 export class CardComponent {
-  @Input() images: string[] = [];
+  @Input() image: string = '';
   @Input() title: string = '';
   @Input() description: string = '';
-  @Input() category: string = '';
+  @Input() category: [] = [];
   @Input() price: number = 0;
 
   constructor() {}
