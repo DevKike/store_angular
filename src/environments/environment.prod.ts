@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  URL_BASE: ''
+  BASE_URL: ''
 };

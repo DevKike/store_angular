@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  URL_BASE: 'https://api.escuelajs.co/api/v1/'
+  BASE_URL: 'https://nodejs-production-4907.up.railway.app/'
 };
 
 
