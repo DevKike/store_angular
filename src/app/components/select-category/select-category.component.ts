@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-select-category',
@@ -7,6 +7,11 @@ import { Component, Input } from '@angular/core';
 })
 export class SelectCategoryComponent {
   @Input() categories: string[] = [];
+  @Output() selectedCategory = new EventEmitter<string>();
   
   constructor() {}
+
+  onCategoryChange(event: any) {
+    this.selectedCategory.emit(event.detail.value);
+  }
 }
