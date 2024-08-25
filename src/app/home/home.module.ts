@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from '../services/http.service';
 import { CardComponent } from '../components/card/card.component';
 import { ToolbarComponent } from '../components/toolbar/toolbar.component';
+import { SelectCategoryComponent } from '../components/select-category/select-category.component';
 
 @NgModule({
   imports: [
@@ -18,7 +19,7 @@ import { ToolbarComponent } from '../components/toolbar/toolbar.component';
     HomePageRoutingModule,
     HttpClientModule
   ],
-  declarations: [HomePage, CardComponent, ToolbarComponent],
+  declarations: [HomePage, CardComponent, ToolbarComponent, SelectCategoryComponent],
   providers: [HttpService]
 })
 export class HomePageModule {}
