@@ -1,6 +1,6 @@
 <ion-list>
   <ion-item>
-    <ion-select aria-label="Category" interface="popover" placeholder="Select category" (ionChange)="onCategoryChange($event)">
+    <ion-select aria-label="Category" interface="popover" placeholder="Select category" (ionChange)="onCategorySelected($event)">
       @for (category of categories; track $index) {
         <ion-select-option>{{ category }}</ion-select-option>
       }

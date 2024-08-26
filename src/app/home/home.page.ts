@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { environment } from 'src/environments/environment';
-import { Product, Category } from '../interfaces/IFakeApiStore';
+import { IFakeApiStoreResponse, Category } from '../interfaces/IFakeApiStoreResponse';
 
 @Component({
   selector: 'app-home',
@@ -9,24 +9,20 @@ import { Product, Category } from '../interfaces/IFakeApiStore';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  public products: Product[] = [];
-  public categories: Category[] = [];
-  public filteredProductsByCategory: Product[] = [];
+  public products: IFakeApiStoreResponse[] = [] ;
+  public categories!: Category;
   private readonly url = environment.BASE_URL;
   
   constructor(private readonly httpService: HttpService) {}
 
   async ngOnInit() {
-    this.getProducts();
-    this.getCategories();
-    this.filterProductsByCategory('all');
+    await this.getProducts();
+    await this.getCategories();
   }
 
   private async getProducts() {
     try {
-      this.products = await this.httpService.get<Product[]>(`${this.url}products`);
-      this.filteredProductsByCategory = [...this.products];
-      console.log("🚀 ~ HomePage ~ getProducts ~ this.products:", this.products)
+      this.products = await this.httpService.get<IFakeApiStoreResponse[]>(`${this.url}products`);
     } catch (error) {
       console.error(error);
     }
@@ -34,21 +30,20 @@ export class HomePage implements OnInit {
 
   private async getCategories() {
     try {
-      this.categories = await this.httpService.get<Category[]>(`${this.url}products/categories`);
-      console.log("🚀 ~ HomePage ~ getCategories ~ this.categories:", this.categories);
+      this.categories = await this.httpService.get<Category>(`${this.url}products/categories`);
     } catch (error) {
       console.error(error);
     }
   }
 
-  public filterProductsByCategory(category: string) {
+  public async getProductInASpecificCategory(category: string) {
     try {
       if (category === 'all') {
-        this.filteredProductsByCategory = [...this.products];
+        this.getProducts();
       } else {
-        this.filteredProductsByCategory = this.products.filter(product => product.category === category);
+        this.products = await this.httpService.get<IFakeApiStoreResponse[]>(`${this.url}products/category/${category}`);
       }
-    } catch(error) {
+    } catch (error) {
       console.error(error);
     }
   }

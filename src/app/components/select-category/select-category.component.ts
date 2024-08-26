@@ -6,12 +6,12 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./select-category.component.scss'],
 })
 export class SelectCategoryComponent {
-  @Input() categories: string[] = [];
+  @Input() categories!: string;
   @Output() selectedCategory = new EventEmitter<string>();
   
   constructor() {}
 
-  onCategoryChange(event: any) {
+  onCategorySelected(event: any) {
     this.selectedCategory.emit(event.detail.value);
   }
 }

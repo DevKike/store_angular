@@ -7,7 +7,7 @@
     <ion-row>
       <ion-col></ion-col>
       <ion-col>
-        <app-select-category [categories]="categories" (selectedCategory)="filterProductsByCategory($event)"></app-select-category>
+        <app-select-category [categories]="categories" (selectedCategory)="getProductInASpecificCategory($event)"></app-select-category>
       </ion-col>
       <ion-col></ion-col>
     </ion-row>
@@ -16,7 +16,7 @@
   <ion-grid [fixed]="true">
     <ion-row>
       @if (products) {
-        @for (product of filteredProductsByCategory; track $index) {
+        @for (product of products; track $index) {
           <ion-col>
             <app-card [image]="product.image" [title]="product.title" [price]="product.price"></app-card>
           </ion-col>
