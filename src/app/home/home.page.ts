@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http.service';
 import { environment } from 'src/environments/environment';
 import { IFakeApiStoreResponse, Category } from '../interfaces/IFakeApiStoreResponse';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomePage implements OnInit {
   public categories!: Category;
   private readonly url = environment.BASE_URL;
   
-  constructor(private readonly httpService: HttpService) {}
+  constructor(private readonly httpService: HttpService, private readonly navController: NavController) {}
 
   async ngOnInit() {
     await this.getProducts();
@@ -46,5 +47,9 @@ export class HomePage implements OnInit {
     } catch (error) {
       console.error(error);
     }
+  }
+
+  public doNavigate(id: number) {
+    this.navController.navigateForward(`details/${id}`);
   }
 }

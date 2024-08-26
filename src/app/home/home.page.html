@@ -18,7 +18,7 @@
       @if (products) {
         @for (product of products; track $index) {
           <ion-col>
-            <app-card [image]="product.image" [title]="product.title" [price]="product.price"></app-card>
+            <app-card (doClick)="doNavigate($event)" [id]="product.id" [image]="product.image" [title]="product.title" [price]="product.price"></app-card>
           </ion-col>
         }
       }
