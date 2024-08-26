@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  BASE_URL: 'https://nodejs-production-4907.up.railway.app/'
+  BASE_URL: 'https://fakestoreapi.com/'
 };
 
 
