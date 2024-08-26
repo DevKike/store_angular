@@ -8,8 +8,8 @@ import { HomePageRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpService } from '../services/http.service';
 import { CardComponent } from '../components/card/card.component';
-import { ToolbarComponent } from '../components/toolbar/toolbar.component';
 import { SelectCategoryComponent } from '../components/select-category/select-category.component';
+import { SharedModule } from '../shared/shared.module';
 
 @NgModule({
   imports: [
@@ -17,9 +17,10 @@ import { SelectCategoryComponent } from '../components/select-category/select-ca
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ],
-  declarations: [HomePage, CardComponent, ToolbarComponent, SelectCategoryComponent],
+  declarations: [HomePage, CardComponent, SelectCategoryComponent],
   providers: [HttpService]
 })
 export class HomePageModule {}
