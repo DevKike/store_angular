@@ -1,5 +1,5 @@
 <ion-card mode="ios">
-  <img [src]="image" alt="product">
+  <img [src]="image" alt="{{ title }}">
   <ion-card-header>
     {{ title | slice:0:25 }}...
   </ion-card-header>
@@ -8,7 +8,7 @@
       {{ category }}
     </p>
     <p>
-      {{ price | currency:'$ ' }}
+      {{ price | currency:"$ " }}
     </p>
   </ion-card-content>
 </ion-card>
