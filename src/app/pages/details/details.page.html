@@ -3,18 +3,50 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  @if (product) {
-    <ion-card>
-      <ion-card-header>
-        {{ product.title }}
-        {{ product.image }}
-      </ion-card-header>
-      <ion-card-content>
-        {{ product.category }}
-        {{ product.price }}
-        {{ product.description }}
-        {{ product.rating }}
-      </ion-card-content>
-    </ion-card>
-  }
+  <ion-grid [fixed]="true">
+    <ion-row>
+      <ion-col>
+        @if (product) {
+        <div class="ion-text-center">
+          <br>
+          <h1>
+            <b>{{ product.title }}</b>
+          </h1>
+          <br><br>
+          <img src="{{ product.image }}" class="product-image" />
+          <br><br>
+          <div class="product-details">
+            <div class="category-price-container">
+              <p class="category"><b>{{ product.category }}</b></p>
+              <div class="price">{{ product.price | currency:"$ "}}</div>
+            </div>
+
+            <p><b>Description</b></p>
+            <p>{{ product.description }}</p>
+
+            <br>
+            <div class="count-rate-container">
+              <div class="count">
+                <p>Bought: {{ product.rating.count }}+</p>
+              </div>
+              <div class="rate">
+                <span class="text-with-img">
+                  {{ product.rating.rate }}
+                </span>
+                <img
+                  src="https://static.vecteezy.com/system/resources/thumbnails/021/664/704/small/gold-star-shotting-gold-star-transparent-gold-bokeh-stars-free-free-png.png"
+                  class="inline-image">
+              </div>
+            </div>
+          </div>
+        </div>
+        }
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-button class="add-cart-button" expand="full">Add to cart</ion-button>
+  </ion-toolbar>
+</ion-footer>

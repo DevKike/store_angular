@@ -24,7 +24,6 @@ export class DetailsPage implements OnInit {
     this.params.params.subscribe(async (params) => {
       const url = `${this.BASE_URL}products/${params['id']}`
       this.product = await this.httpService.get<IFakeApiStoreResponse>(url);
-      console.log("🚀 ~ DetailsPage ~ this.params.params.subscribe ~ this.product:", this.product)
     });
   }
 
