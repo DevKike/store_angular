@@ -1,0 +1,21 @@
+.product-card {
+    background: #ffffff;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.product-card p {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    color: #000;
+  }

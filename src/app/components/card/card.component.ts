@@ -10,8 +10,9 @@ export class CardComponent {
   @Input() image: string = '';
   @Input() title: string = '';
   @Input() description: string = '';
-  @Input() category: [] = [];
+  @Input() category = '';
   @Input() price: number = 0;
+  @Input() rate: number = 0;
 
   @Output() doClick = new EventEmitter();
 

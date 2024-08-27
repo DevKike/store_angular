@@ -17,8 +17,8 @@
     <ion-row>
       @if (products) {
         @for (product of products; track $index) {
-          <ion-col>
-            <app-card (doClick)="doNavigate($event)" [id]="product.id" [image]="product.image" [title]="product.title" [price]="product.price"></app-card>
+          <ion-col size="6" size-md="4" size-lg="3">
+            <app-card (doClick)="doNavigate($event)" [id]="product.id" [image]="product.image" [title]="product.title" [category]="product.category" [rate]="product.rating.rate" [price]="product.price"></app-card>
           </ion-col>
         }
       }

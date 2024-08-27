@@ -1,11 +1,14 @@
-<ion-card mode="ios" button="true" (click)="onClick(id)">
+<ion-card class="product-card" button="true" (click)="onClick(id)">
   <img [src]="image" alt="{{ title }}">
   <ion-card-header>
-    {{ title | slice:0:25 }}...
+    {{ title | slice:0:27 }}...
   </ion-card-header>
-  <ion-card-content mode="ios">
+  <ion-card-content>
     <p>
       {{ category }}
+    </p>
+    <p>
+      {{ rate }}
     </p>
     <p>
       {{ price | currency:"$ " }}
