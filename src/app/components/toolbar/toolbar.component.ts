@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-toolbar',
@@ -7,6 +8,9 @@ import { Component } from '@angular/core';
 })
 export class ToolbarComponent {
 
-  constructor() { }
+  constructor(private readonly navController: NavController) { }
 
+  public doNavigateToCart() {
+    this.navController.navigateForward('cart')    
+  }
 }
