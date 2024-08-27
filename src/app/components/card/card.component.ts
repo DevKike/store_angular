@@ -18,7 +18,7 @@ export class CardComponent {
 
   constructor() {}
 
-  onClick(id: number) {
+  public onClick(id: number) {
     this.doClick.emit(id);
   }
 }
