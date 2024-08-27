@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { IFakeApiStoreResponse } from 'src/app/interfaces/IFakeApiStoreResponse';
 import { HttpService } from 'src/app/services/http/http.service';
+import { ToastService } from 'src/app/services/toast/toast.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -15,7 +16,8 @@ export class DetailsPage implements OnInit {
 
   constructor(
     private readonly httpService: HttpService,
-    private readonly params: ActivatedRoute
+    private readonly params: ActivatedRoute,
+    private readonly toastService: ToastService
   ) {}
 
   async ngOnInit() {
@@ -27,5 +29,9 @@ export class DetailsPage implements OnInit {
       const url = `${this.BASE_URL}products/${params['id']}`;
       this.product = await this.httpService.get<IFakeApiStoreResponse>(url);
     });
+  }
+
+  public showToast() {
+    this.toastService.presentToast('Added with success', 500, 'top')
   }
 }

@@ -13,6 +13,7 @@ export class ToastService {
       message,
       duration,
       position,
+      cssClass: 'custom-toast'
     });
 
     await toast.present();
