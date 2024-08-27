@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../services/http.service';
+import { HttpService } from '../services/http/http.service';
 import { environment } from 'src/environments/environment';
 import { IFakeApiStoreResponse, Category } from '../interfaces/IFakeApiStoreResponse';
 import { NavController } from '@ionic/angular';

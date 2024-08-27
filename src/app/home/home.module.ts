@@ -6,7 +6,7 @@ import { HomePage } from './home.page';
 
 import { HomePageRoutingModule } from './home-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpService } from '../services/http.service';
+import { HttpService } from '../services/http/http.service';
 import { CardComponent } from '../components/card/card.component';
 import { SelectCategoryComponent } from '../components/select-category/select-category.component';
 import { SharedModule } from '../shared/shared.module';

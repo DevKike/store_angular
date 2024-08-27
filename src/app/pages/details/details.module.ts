@@ -8,7 +8,7 @@ import { DetailsPageRoutingModule } from './details-routing.module';
 
 import { DetailsPage } from './details.page';
 import { HttpClientModule } from '@angular/common/http';
-import { HttpService } from 'src/app/services/http.service';
+import { HttpService } from 'src/app/services/http/http.service';
 import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
