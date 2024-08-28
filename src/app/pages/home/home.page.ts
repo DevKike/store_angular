@@ -10,7 +10,7 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage implements OnInit {
-  public products: IFakeApiStoreResponse[] = [] ;
+  public products: IFakeApiStoreResponse[] = [];
   public categories!: Category;
   private readonly url = environment.BASE_URL;
   
@@ -19,22 +19,6 @@ export class HomePage implements OnInit {
   async ngOnInit() {
     await this.getProducts();
     await this.getCategories();
-  }
-
-  private async getProducts() {
-    try {
-      this.products = await this.httpService.get<IFakeApiStoreResponse[]>(`${this.url}products`);
-    } catch (error) {
-      console.error(error);
-    }
-  }
-
-  private async getCategories() {
-    try {
-      this.categories = await this.httpService.get<Category>(`${this.url}products/categories`);
-    } catch (error) {
-      console.error(error);
-    }
   }
 
   public async getProductInASpecificCategory(category: string) {
@@ -51,5 +35,21 @@ export class HomePage implements OnInit {
 
   public doNavigate(id: number) {
     this.navController.navigateForward(`details/${id}`);
+  }
+  
+  private async getProducts() {
+    try {
+      this.products = await this.httpService.get<IFakeApiStoreResponse[]>(`${this.url}products`);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  private async getCategories() {
+    try {
+      this.categories = await this.httpService.get<Category>(`${this.url}products/categories`);
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
