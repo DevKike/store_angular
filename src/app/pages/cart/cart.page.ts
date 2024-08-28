@@ -14,7 +14,7 @@ export class CartPage implements OnInit {
 
   constructor(
     private readonly toastService: ToastService,
-    private readonly cartService: CartService
+    private readonly cartService: CartService,
   ) {}
 
   async ngOnInit() {
@@ -27,6 +27,7 @@ export class CartPage implements OnInit {
   }
 
   public async payCart() {
+    await this.cartService.payCart();
     this.cartService.clearCart();
     await this.toastService.showToast('Payed with success', 500, 'top');
   }
