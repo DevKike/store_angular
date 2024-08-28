@@ -1,34 +1,42 @@
-ion-list {
-    background: transparent;
-}
-
-ion-item {
-    --padding-start: 0;
-    --inner-padding-end: 0;
-    --background: #ffffff;
-    border-bottom: 1px solid #e0e0e0;
-}
-
 ion-thumbnail {
-    --size: 60px;
+    --size: 60px; /* Tamaño del thumbnail */
     margin-right: 16px;
+}
+
+ion-thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen al tamaño del thumbnail */
+}
+
+ion-label {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 ion-label h2 {
     font-size: 11px;
     font-weight: bold;
     color: #000000;
-}
-
-ion-label p {
-    font-size: 13px;
-    color: #000000;
-    font-weight: normal;
+    margin: 0; /* Elimina márgenes predeterminados */
+    padding-bottom: 4px; /* Ajusta el espacio entre el título y el contenido siguiente */
 }
 
 .delete-button {
     --color: #bd1616;
     --padding-end: 2px;
     --padding-start: 4px;
-    margin-right: -1px;
+    margin-left: 8px;
+    position: relative;
+}
+
+.price {
+    position: absolute;
+    right: 8px; /* Ajusta según sea necesario */
+    bottom: 10px; /* Ajusta según sea necesario */
+    font-size: 13px;
+    color: #000000;
+    font-weight: normal;
 }

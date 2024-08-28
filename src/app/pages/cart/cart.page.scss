@@ -2,7 +2,6 @@ ion-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* Asegura que el contenido se estire entre el principio y el final */
 }
 
 .cart-container {
@@ -10,12 +9,12 @@ ion-content {
 }
 
 .total-container {
-    position: fixed; /* O fijo en la parte inferior */
-    bottom: 20px;
+    position: fixed;
+    bottom: 30px;
     width: 100%;
-    padding: 0 32px;
-    background-color: white; /* Fondo blanco para el total */
-    border-top: 1px solid #ccc; /* Línea superior opcional */
-    text-align: right; /* Alinea el texto a la derecha */
-    box-shadow: 0 -2px 5px rgba(0,0,0,0.1); /* Sombra opcional para separación */
-  }
+    padding: 0px 30px;
+    background-color: white;
+    border-top: 1px solid #ccc;
+    text-align: right;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
