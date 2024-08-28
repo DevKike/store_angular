@@ -3,10 +3,12 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">cart</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  @if(!cartItems) {
+    
+  } @else {
+    @for (cartItem of cartItems; track $index) {
+      <app-list-card [id]="cartItem.id" [image]="cartItem.image" [title]="cartItem.title" [price]="cartItem.price" (doClick)="removeItemFromCartById($event)"></app-list-card>
+    }
+  }
 </ion-content>
-<app-footer (click)="showToast()" [buttonText]="'Payment'"></app-footer>
+<app-footer (click)="payCart()" [buttonText]="'Payment'"></app-footer>
