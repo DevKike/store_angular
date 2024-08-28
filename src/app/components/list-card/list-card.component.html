@@ -1,0 +1,18 @@
+<ion-card>
+  <ion-card-content>
+    <ion-list lines="full">
+      <ion-item>
+        <ion-thumbnail slot="start">
+          <img [src]="image" [alt]="title">
+        </ion-thumbnail>
+        <ion-label>
+          <h2>{{ title }}</h2>
+          <p>{{ price | currency:"$ " }}</p>
+        </ion-label>
+        <ion-button (click)="onClick()" fill="clear" slot="end" class="delete-button">
+          <ion-icon name="trash"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+</ion-card>
