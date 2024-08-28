@@ -10,6 +10,7 @@ import { ToastService } from 'src/app/services/toast/toast.service';
 })
 export class CartPage implements OnInit {
   public cartItems: IFakeApiStoreResponse[] = [];
+  public totalAmount!: number;
 
   constructor(
     private readonly toastService: ToastService,
@@ -17,10 +18,7 @@ export class CartPage implements OnInit {
   ) {}
 
   async ngOnInit() {
-    await this.getItems();
-    this.cartService.cart$.subscribe((cart) => {
-      this.cartItems = cart;
-    });
+    await this.initCart();
   }
 
   public async removeItemFromCartById(id: number) {
@@ -33,7 +31,10 @@ export class CartPage implements OnInit {
     await this.toastService.showToast('Payed with success', 500, 'top');
   }
 
-  private async getItems() {
-    this.cartItems = this.cartService.getItemsOnCart();
+  private async initCart() {
+    this.cartService.cart$.subscribe((cart) => {
+      this.cartItems = cart;
+      this.totalAmount = this.cartService.getTotalPrice();
+    });
   }
 }

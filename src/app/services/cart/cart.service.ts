@@ -14,10 +14,6 @@ export class CartService {
     this.cart.next([...currentCart, item]);
   }
 
-  public getItemsOnCart(): IFakeApiStoreResponse[] {
-    return this.cart.getValue();
-  }
-
   public removeItemById(id: number) {
     const currentCart = this.cart.getValue();
     const updatedCart = currentCart.filter(cartItem => cartItem.id !== id);
@@ -26,6 +22,10 @@ export class CartService {
 
   public clearCart() {
     this.cart.next([]);
+  }
+
+  public getTotalPrice(): number {
+    return this.cart.getValue().reduce((total, item) => total + item.price, 0);
   }
 
   constructor() {}

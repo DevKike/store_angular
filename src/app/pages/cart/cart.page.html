@@ -6,9 +6,14 @@
   @if(!cartItems) {
     
   } @else {
-    @for (cartItem of cartItems; track $index) {
-      <app-list-card [id]="cartItem.id" [image]="cartItem.image" [title]="cartItem.title" [price]="cartItem.price" (doClick)="removeItemFromCartById($event)"></app-list-card>
-    }
+    <div class="cart-container">
+      @for (cartItem of cartItems; track $index) {
+        <app-list-card [id]="cartItem.id" [image]="cartItem.image" [title]="cartItem.title" [price]="cartItem.price" (doClick)="removeItemFromCartById($event)"></app-list-card>
+      }
+    </div>
+    <div class="total-container">
+      <p>{{ totalAmount | currency: "$ " }}</p>
+    </div>
   }
 </ion-content>
 <app-footer (click)="payCart()" [buttonText]="'Payment'"></app-footer>
