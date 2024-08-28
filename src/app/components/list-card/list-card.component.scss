@@ -1,12 +1,12 @@
 ion-thumbnail {
-    --size: 60px; /* Tamaño del thumbnail */
+    --size: 60px;
     margin-right: 16px;
 }
 
 ion-thumbnail img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ajusta la imagen al tamaño del thumbnail */
+    object-fit: cover;
 }
 
 ion-label {
@@ -20,8 +20,8 @@ ion-label h2 {
     font-size: 11px;
     font-weight: bold;
     color: #000000;
-    margin: 0; /* Elimina márgenes predeterminados */
-    padding-bottom: 4px; /* Ajusta el espacio entre el título y el contenido siguiente */
+    margin: 0;
+    padding-bottom: 4px;
 }
 
 .delete-button {
@@ -34,8 +34,8 @@ ion-label h2 {
 
 .price {
     position: absolute;
-    right: 8px; /* Ajusta según sea necesario */
-    bottom: 10px; /* Ajusta según sea necesario */
+    right: 8px;
+    bottom: 10px;
     font-size: 13px;
     color: #000000;
     font-weight: normal;
