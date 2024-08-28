@@ -2,18 +2,25 @@
   <app-toolbar></app-toolbar>
 </ion-header>
 
+@if(cartItems.length === 0) {
 <ion-content [fullscreen]="true">
-  @if(!cartItems) {
-    
-  } @else {
-    <div class="cart-container">
-      @for (cartItem of cartItems; track $index) {
-        <app-list-card [id]="cartItem.id" [image]="cartItem.image" [title]="cartItem.title" [price]="cartItem.price" (doClick)="removeItemFromCartById($event)"></app-list-card>
-      }
-    </div>
-    <div class="total-container">
-      <p>{{ totalAmount | currency: "$ " }}</p>
-    </div>
-  }
+  <div class="empty-cart-content">
+    <img src="https://cdn-icons-png.flaticon.com/512/102/102661.png" alt="Empty Cart" class="empty-cart-image" />
+    <h2>Your cart is empty</h2>
+  </div>
+</ion-content>
+
+} @else {
+<ion-content [fullscreen]="true">
+  <div class="cart-container">
+    @for (cartItem of cartItems; track $index) {
+    <app-list-card [id]="cartItem.id" [image]="cartItem.image" [title]="cartItem.title" [price]="cartItem.price"
+      (doClick)="removeItemFromCartById($event)"></app-list-card>
+    }
+  </div>
+  <div class="total-container">
+    <p>{{ totalAmount | currency: "$ " }}</p>
+  </div>
 </ion-content>
 <app-footer (click)="payCart()" [buttonText]="'Payment'"></app-footer>
+}

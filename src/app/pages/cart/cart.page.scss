@@ -18,3 +18,26 @@ ion-content {
     text-align: right;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
+
+.empty-cart-content {   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    text-align: center;
+    overflow: hidden;
+}
+
+.empty-cart-image {
+    max-width: 100px;
+    margin-bottom: 10px;
+    opacity: 0.1;
+}
+
+h2 {
+    margin: 2px 0;
+    font-size: 13px;
+    color: #666;
+    opacity: 0.4;
+}
