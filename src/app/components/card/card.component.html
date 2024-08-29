@@ -7,12 +7,16 @@
     <p>
       {{ category }}
     </p>
-    <p>
-      {{ rate }}
-    </p>
+    <div class="rate-container">
+      <span class="rate-text">
+        {{ rate }}
+      </span>
+      <img
+        src="https://static.vecteezy.com/system/resources/thumbnails/021/664/704/small/gold-star-shotting-gold-star-transparent-gold-bokeh-stars-free-free-png.png"
+        class="star-image" alt="star-icon">
+    </div>
     <p>
       {{ price | currency:"$ " }}
     </p>
   </ion-card-content>
 </ion-card>
- 

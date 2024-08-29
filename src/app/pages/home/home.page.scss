@@ -1,4 +1,20 @@
-ion-col {
+ion-grid {
+    padding: 16px; /* Ajusta el padding del grid para darle un poco de espacio */
+  }
+  
+  ion-row {
+    justify-content: center; /* Asegura que las columnas se centren en el grid */
+  }
+  
+  ion-col {
+    margin: 8px 0; /* Añade margen vertical para separar las cartas */
     display: flex;
-    align-items: stretch;
-}
+    justify-content: center; /* Centra la carta dentro de la columna */
+  }
+  
+  @media (min-width: 768px) {
+    ion-col {
+      margin: 8px; /* Aumenta el margen en pantallas más grandes */
+    }
+  }
+  
